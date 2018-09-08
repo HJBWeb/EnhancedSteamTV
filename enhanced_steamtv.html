@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Enhanced SteamTV</title>
+	<style>
+		body {
+			background-color: #212121;
+			color: #fff;
+			font-family: 'Segoe UI', 'Arial', 'Helvetica', 'San Francisco', sans-serif;
+		}
+		a {
+			color: red;
+		}
+		input {
+			background-color: #000000;
+			color: #fff;
+			outline: none;
+			border: 1px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+	<input type="text" id="filterField" v-model="field">
+	<button type="button" id="addFilterButton" @click="addFilter()">Add Filter</button>
+	<p>Added Filters</p>
+	<div id="addedFilters">
+		<ul>
+			<li v-for="(filter, index) in chatFilters">{{ filter }} <a href="#" @click="removeFilter(index)">Remove</a></li>
+		</ul>
+	</div>
+	<p>Note: You will have to reload the page for changes to take effect.</p>
+	</div>
+	<script src="vue_prod.js"></script>
+	<script src="popover.js"></script>
+</body>
+</html>
